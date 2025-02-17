@@ -14,7 +14,7 @@ const RightSideBar = ({user, transactions, banks}:RightSidebarProps) => {
                 </div>
                 <div className='profile-details'>
                     <h1 className='profile-name'>
-                        {user.firstName} {user.lastName}
+                        {user.firstName}
                     </h1>
                     <p className='profile-email'>
                         {user.email}
@@ -41,7 +41,7 @@ const RightSideBar = ({user, transactions, banks}:RightSidebarProps) => {
                         <div className='relative z-10'>
                             <BankCard key={banks[0].$id}
                             account={banks[0]}
-                            userName={`${user.firstName} ${user.lastName}`}
+                            userName={user.firstName}
                             showBalance={false}/>
                         </div>
                         {
@@ -49,7 +49,7 @@ const RightSideBar = ({user, transactions, banks}:RightSidebarProps) => {
                                 <div className='absolute right-0 top-8 z-0 w-[90%]'>
                             <BankCard key={banks[1].$id}
                             account={banks[1]}
-                            userName={`${user.firstName} ${user.lastName}`}
+                            userName={user.firstName}
                             showBalance={false}/>                                </div>
                             )
                         }
