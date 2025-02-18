@@ -1,6 +1,4 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import {Inter, IBM_Plex_Serif} from "next/font/google";
+
 import SideBar from "@/components/SideBar";
 import Image from "next/image";
 import MobileNav from "@/components/MobileNav";

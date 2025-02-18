@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { set, z } from "zod"
+import { z } from "zod"
  
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/form"
 import CustomInput from './CustomInput'
 import { authFormSchema } from '@/lib/utils'
-import { Loader, Loader2 } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { SignIn, SignUp } from '@/lib/actions/user.actions'
 import PlaidLink from './PlaidLink'
