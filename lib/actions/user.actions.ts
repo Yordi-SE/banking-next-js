@@ -148,6 +148,7 @@ export const createBankAccount = async ({
         const response = await plaidClient.itemPublicTokenExchange({
             public_token: publicToken
         });
+        console.log("access token response", response.data);
         const accessToken = response.data.access_token;
         const itemId = response.data.item_id;
 
@@ -156,6 +157,9 @@ export const createBankAccount = async ({
         });
 
         const accountData = accountsResponse.data.accounts[0];
+        console.log("account data", accountsResponse);
+        console.log("accountData data", accountsResponse.data);
+        console.log("accountData data", accountsResponse.data.accounts[0]);
 
         const request: ProcessorTokenCreateRequest = {
             access_token: accessToken,
@@ -166,6 +170,7 @@ export const createBankAccount = async ({
         const processorTokenResponse = await plaidClient.processorTokenCreate(request);
         const processorToken = processorTokenResponse.data.processor_token;
 
+        console.log("processor token response", processorTokenResponse.data);
         const fundingSourceUrl = await addFundingSource({
             dwollaCustomerId: user.dwollaCustomerId,
             processorToken,
